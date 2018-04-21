@@ -1,0 +1,31 @@
+Currently tailored to a specefic database
+
+TODOs:
+Generalize the implementation
+
+--------------------------------------------------------------------------------
+INSTALLATION:
+
+0. Clone the repository
+
+1. create a Conda enviroment with the enviroment file
+conda create --name EnvName --file enviroment.txt
+
+
+2. activate the enviroment
+activate EnvName
+
+
+3. run the app
+python app.py
+
+
+..........................................................................
+
+USAGE:
+
+go to the URL: http://127.0.0.1:5000
+
+use category and search bar to retreive data
+
+..........................................................................

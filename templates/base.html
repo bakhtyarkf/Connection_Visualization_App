@@ -1,0 +1,77 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/css/tether.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='libs/bootstrap-grid.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='libs/bootstrap-reboot.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='libs/bootstrap.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='libs/bokeh.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='libs/dc.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='libs/main.css') }}">
+    
+</head>
+<body>
+
+
+
+
+
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary bg-faded" >
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">VizBord</a>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li  class="nav-item {%- if request.path == '/force1' %}active{% endif %}"  >
+                <a href="{{url_for('force1')}}" class="nav-link">ForceNet</a></li>
+          </ul>
+            <form action="" method="post" class="form form-inline my-2 my-lg-0" role="form">
+                {{ form.hidden_tag() }}
+                {{ form.choice(class_="form-control")}}
+                {{ form.value(class_="form-control") }}
+                {{ form.submit(class_="btn") }}
+            </form>
+        </div>
+      </nav>
+
+
+    <div class="cont" id="cont">
+    
+        {% block content %}     
+        {% endblock content %}
+
+    </div>
+
+
+    {%- if request.path in ["/dash1"] %}
+       <script src="{{ url_for('static', filename='libs/d33.js') }}"></script>
+    {% endif %} 
+
+    {%- if request.path in ["/force1"] %}
+        <script src="{{ url_for('static', filename='libs/d34.js') }}"></script>
+    {% endif %} 
+
+    <script src="{{ url_for('static', filename='libs/jquery.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="{{ url_for('static', filename='libs/bootstrap.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='libs/crossfilter.js') }}"></script>
+    <script src="{{ url_for('static', filename='libs/bokeh.js') }}"></script>
+
+
+    {%- if request.path == "/dash1" %}
+        <script src="{{ url_for('static', filename='libs/dc.js') }}"></script>
+        <script src="{{ url_for('static', filename='dash1/dash.js') }}"></script>
+    {% endif %} -->
+
+    {%- if request.path == "/force1" %}
+        <script src="{{ url_for('static', filename='force1/force.js') }}"></script>
+    {% endif %}
+    
+</body>
+</html>
+

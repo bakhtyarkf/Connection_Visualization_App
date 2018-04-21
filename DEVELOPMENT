@@ -1,0 +1,6 @@
+* a change to make it possibly much faster
+in the sql code, we must not join the table togather.
+we can retreive them seperately and create the Dictionary in python
+
+* using this approach we may able to create the table of connections and avoiding the nested for loop
+

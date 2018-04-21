@@ -1,0 +1,92 @@
+{% extends "base.html" %} {% block content %}
+
+<script>
+</script>
+<div class="row">
+    <!-- <form action="" method="" class="form-check form-check-inline" role="form"> -->
+    <input class="btn btn-primary topsel tablink" onclick="openTab('deg1')" type="submit" id="deg1b" value="Degree 1">
+    <input class="btn btn-primary topsel tablink" onclick="openTab('deg2')" type="submit" id="deg2b" value="Degree 2" disabled>
+    <input class="btn btn-primary topsel tablink" onclick="openTab('deg3')" type="submit" id="deg3b" value="Degree 3" disabled>
+
+
+    <!-- unComment this line to Enable query selected-->
+    <form action="" method="post" class="form form-inline my-2 my-lg-0 topsel" role="form">
+        {{ form2.hidden_tag() }} {{ form2.hchoice(class_="hiddenForm")}} {{ form2.hvalue(class_="hiddenForm") }} {{ form2.qsubmit(class_="btn
+        btn-primary") }}
+    </form>
+</div>
+
+<div id="deg1" class="tabcontent">
+    <div class="row">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div class="chart1"></div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="deg2" class="tabcontent">
+    <div class="row">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div class="chart2"></div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div id="deg3" class="tabcontent">
+    <div class="row">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div class="chart3"></div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openTab(TabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        document.getElementById(TabName).style.display = "block";
+
+    }
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("deg1b").click();
+</script> {% endblock content %}
